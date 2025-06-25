@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql
+    container_name: AppDistancia
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: DevDistancia
+      MYSQL_DATABASE: Distancia
+      MYSQL_USER: Distancia
+      MYSQL_PASSWORD: DevDistancia
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db/:/docker-entrypoint-initdb.d/
